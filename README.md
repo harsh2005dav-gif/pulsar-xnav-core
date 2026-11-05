@@ -22,16 +22,17 @@ The Extended Kalman Filter ingests photon arrival phases and rapidly drives posi
 ## Mathematical Architecture
 
 ### 1. Relativistic Time-of-Arrival (TOA) Model
+
 Light signals received at spacecraft time $t_{sc}$ are transformed to the Solar System Barycentre (SSB) coordinate frame $t_{ssb}$:
 
 $$t_{ssb} = t_{sc} + \Delta t_{\text{Rømer}} + \Delta t_{\text{Shapiro}}$$
 
-* **Rømer Delay (Geometric Time-of-Flight):**
-  $$\Delta t_{\text{Rømer}} = \frac{\mathbf{r}_{sc} \cdot \mathbf{n}_i}{c}$$
+**Rømer Delay (Geometric Time-of-Flight):**
+$$\Delta t_{\text{Rømer}} = \frac{\mathbf{r}_{sc} \cdot \mathbf{n}_i}{c}$$
 
-* **Shapiro Delay (Gravitational Curvature Delay around the Sun):**
-  $$\Delta t_{\text{Shapiro}} = -\frac{2 G M_\odot}{c^3} \ln \left( 1 + \mathbf{n}_i \cdot \frac{\mathbf{r}_{sc}}{\|\mathbf{r}_{sc}\|} \right)$$
-  
+**Shapiro Delay (Gravitational Curvature Delay around the Sun):**
+$$\Delta t_{\text{Shapiro}} = -\frac{2 G M_\odot}{c^3} \ln \left( 1 + \mathbf{n}_i \cdot \frac{\mathbf{r}_{sc}}{\|\mathbf{r}_{sc}\|} \right)$$
+
 ### 2. Celestial Pulsar Catalog
 The state estimator tracks observations from real astrophysical sources:
 * **PSR B1937+21** ($P \approx 1.557\text{ ms}$)
